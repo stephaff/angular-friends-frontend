@@ -1,0 +1,41 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="container" fxLayout="row wrap" fxLayoutGap="10" *ngIf="!loading">
+  <div class="friends-list" fxFlex="73">
+    <mat-card *ngFor="let friend of friends">
+      <div class="informations">
+        <p><span class="label">Name :</span><span class="data">{{ friend.name }}</span></p>
+        <p><span class="label">Phone :</span><span class="data">{{ friend.phone }}</span></p>
+        <p><span class="label">Job :</span><span class="data">{{ friend.job }}</span></p>
+      </div>
+      <div class="friend-actions">
+        <button mat-icon-button (click)="goToDetails(friend._id)">
+          <mat-icon color="primary">visibility</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon color="accent">edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delFriend(friend._id)">
+          <mat-icon color="warn">delete</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </div>
+  <div class="add-friend" fxFlex="25">
+    <form #addForm="ngForm" (ngSubmit)="addFriend(addForm)">
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" name="name" ngModel required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput type="text" name="phone" ngModel required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Job</mat-label>
+        <input matInput type="text" name="job" ngModel required>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Add friend</button>
+    </form>
+  </div>
+</div>
+

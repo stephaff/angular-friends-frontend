@@ -1,0 +1,15 @@
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="container" *ngIf="!loading">
+  <mat-card>
+    <mat-card-content>
+      <p>Name : {{ friend.name }}</p>
+      <p>Phone : {{ friend.phone }}</p>
+      <p>Job : {{ friend.job }} </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-icon-button routerLink="/home">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

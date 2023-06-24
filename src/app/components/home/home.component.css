@@ -1,0 +1,37 @@
+.container{
+  padding: 15px;
+}
+
+.friends-list{
+  /* border: 1px solid red; */
+}
+
+mat-form-field{
+  width: 100%;
+}
+
+.add-friend form{
+  /* border: 1px solid green; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-card{
+  padding: 8px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.label{
+  display: inline-block;
+  width: 60px;
+}
+
+.friend-actions{
+  display: flex;
+  flex-direction: column;
+}
+
