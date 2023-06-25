@@ -19,6 +19,10 @@ export class HomeComponent implements OnInit {
   ){}
 
   ngOnInit() {
+    this.getAllContactsFromServer()
+  }
+
+  getAllContactsFromServer(){
     this.loading = true
     this.friendService.getFriends().subscribe(friends => {
       this.friends = friends
